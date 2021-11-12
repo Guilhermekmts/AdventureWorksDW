@@ -1,0 +1,147 @@
+version: 2
+
+sources:
+  - name: adventure-works
+    database: Adventure Works #colocar argumentos adicionais no postgres
+    schema: public  #colocar argumentos adicionais no postgres
+    tables:
+      - name: customer
+        description: Essa é a tabela de clientes
+        columns:
+          - name: customerid
+            description: id do cliente
+            tests:
+              - unique
+              - not_null
+      - name: address
+        description: Essa é a Enderecos
+        columns:
+          - name: adressid
+            description: id do Endereco
+            tests:
+              - unique
+              - not_null
+      - name: countryregion
+        description: Essa é a tabela de regioes do pais
+        columns:
+          - name: countryregioncode
+            description: id da regiao
+            tests:
+              - unique
+              - not_null
+      - name: creditcard
+        description: Essa é a tabela de cartoes de credito
+        columns:
+          - name: creditcardid
+            description: id do cartao
+            tests:
+              - unique
+              - not_null
+      - name: product
+        description: Essa é a tabela de produtos
+        columns:
+          - name: productid
+            description: id do produto
+            tests:
+              - unique
+              - not_null
+      - name: productcategory
+        description: Essa é a tabela categoria do produto
+        columns:
+          - name: productcategoryid
+            description: id da categoria
+            tests:
+              - unique
+              - not_null
+      - name: salesorderdetail
+        description: Essa é a tabela de detalhamento da ordem (Vazia)
+
+      - name: salesorderheader
+        description: Essa é a tabela pedidos
+        columns:
+          - name: salesorderid
+            description: id do pedido
+            tests:
+              - unique
+              - not_null
+      - name: salesorderheadersalesreason
+        description: Essa é a tabela de razoes de compra (Link entre tabela de pedido e razao)
+        columns:
+          - name: salesreasonid
+            description: id da razao
+
+      - name: salesreason
+        description: Essa é a tabela de razoes
+        columns:
+          - name: salesreasonid
+            description: id da razao
+            tests:
+              - unique
+              - not_null
+
+      - name: salesterritory
+        description: Essa é a tabela de vendas por regiao.
+
+      - name: salesterritoryhistory
+        description: Essa é a tabela de historico vendas por regiao.        
+
+      - name: shoppingcartitem
+        description: Essa é a tabela de itens no catalogo
+
+      - name: specialoffer
+        description: Essa é a tabela de ofertas especiais
+        columns:
+          - name: specialofferid
+            description: id da oferta
+            tests:
+              - unique
+              - not_null
+
+      - name: specialofferproduct
+        description: Essa é a tabela de ofertas dos produtos especiais    
+
+      - name: store
+        description: Essa é a tabela de lojas
+        columns:
+          - name: storeid
+            description: id da loja
+            tests:
+              - unique
+              - not_null
+
+      - name: person
+        description: Essa é a tabela de Pessoas (Consumidores e Empregados)
+        columns:
+          - name: personid
+            description: id da pessoa
+            tests:
+              - unique
+              - not_null        
+
+      - name: employee
+        description: Essa é a tabela de Empregados
+        columns:
+          - name: personid
+            description: id da pessoa
+            tests:
+              - unique
+              - not_null          
+
+      - name: productsubcategory
+        description: Essa é a tabela de Subcategoria do produto (Produto -> SubCategoria -> Categoria)
+        columns:
+          - name: productsubcategoryid
+            description: id da Subcategoria
+            tests:
+              - unique
+              - not_null   
+
+      - name: stateprovince
+        description: Tabela de provincias
+        columns:
+          - name: stateprovinceid
+            description: id da Provincia
+            tests:
+              - unique
+              - not_null                                         
+        
